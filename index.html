@@ -1,144 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - Chatbot</title>
+  <title>AI-Powered College Enquiry Chatbot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Login Page -->
-  <div id="loginPage" class="page active">
-    <div class="login-container">
-      <div class="login-card">
-        <div class="login-header">
-          <h1>Admin Login</h1>
-          <p>Chatbot Management System</p>
-        </div>
-        
-        <form id="loginForm" class="login-form">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input 
-              id="username" 
-              type="text"
-              placeholder="Enter your username" 
-              required
-            />
-          </div>
-          
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input 
-              id="password" 
-              type="password"
-              placeholder="Enter your password" 
-              required
-            />
-          </div>
-          
-          <button type="submit" id="loginBtn" class="btn btn-primary btn-block">Login</button>
-          <p id="loginError" class="error-message"></p>
-        </form>
+
+<div class="container">
+  <h1>🎓 AI-Powered College Enquiry Chatbot</h1>
+  
+  <div class="main-section">
+    <div class="chatbox-container">
+      <div class="chatbox" id="chatbox">
+        <div class="bot"><b>Bot:</b> Hello! I'm an AI-powered college assistant. Ask me anything about admissions, courses, timings, hostel, placements, and more!</div>
+      </div>
+      
+      <div class="input-section">
+        <input type="text" id="userInput" placeholder="Ask your question..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()" class="send-btn">Send</button>
+      </div>
+    </div>
+    
+    <div class="info-panel">
+      <h3>ℹ️ About this Chatbot</h3>
+      <div class="info-box">
+        <ul>
+          <li>✓ AI-powered responses using OpenAI GPT-3.5</li>
+          <li>✓ Trainable with custom college data</li>
+          <li>✓ Dynamic data management</li>
+          <li>✓ Multiple categories support</li>
+          <li>✓ Smart related questions suggestion</li>
+        </ul>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Admin Dashboard -->
-  <div id="adminPage" class="page">
-    <!-- Header -->
-    <header class="admin-header">
-      <div class="header-content">
-        <h1>Admin Dashboard</h1>
-        <button id="logoutBtn" class="btn btn-danger">Logout</button>
-      </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="admin-nav">
-      <button class="nav-btn active" data-page="add-question">
-        <span class="icon">➕</span> Add Question
-      </button>
-      <button class="nav-btn" data-page="view-questions">
-        <span class="icon">📋</span> View Questions
-      </button>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="admin-content">
-      <!-- Add Question Page -->
-      <div id="add-question" class="content-page active">
-        <div class="page-header">
-          <h2>Add New Question</h2>
-          <p>Add a new question and answer to the database</p>
-        </div>
-
-        <div class="form-card">
-          <form id="addQuestionForm" class="form">
-            <div class="form-group">
-              <label for="newQ">Question *</label>
-              <textarea 
-                id="newQ" 
-                placeholder="Enter the question..."
-                rows="3"
-                required
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="newA">Answer *</label>
-              <textarea 
-                id="newA" 
-                placeholder="Enter the answer..."
-                rows="4"
-                required
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="newCat">Category</label>
-              <input 
-                id="newCat" 
-                type="text"
-                placeholder="e.g., General, Admission, Fee, Contact, etc."
-              />
-            </div>
-
-            <button type="submit" class="btn btn-success btn-large">
-              <span>➕</span> Add Question
-            </button>
-          </form>
-
-          <!-- Alert Messages -->
-          <div id="addAlert" class="alert hidden"></div>
-        </div>
-      </div>
-
-      <!-- View Questions Page -->
-      <div id="view-questions" class="content-page">
-        <div class="page-header">
-          <h2>Questions Database</h2>
-          <div class="page-stats">
-            <span id="questionCount" class="stat-badge">0 questions</span>
-          </div>
-        </div>
-
-        <div class="search-box">
-          <input 
-            id="searchInput" 
-            type="text" 
-            placeholder="🔍 Search questions..."
-            class="search-input"
-          />
-        </div>
-
-        <div id="questionsContainer" class="questions-grid">
-          <div class="loading">Loading questions...</div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
